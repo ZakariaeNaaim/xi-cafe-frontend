@@ -1,1 +1,94 @@
-<div>login works!</div>
+<div class="login-container">
+  <div class="login-header">
+    <h1 class="page-title">{{ 'LOGIN.TITLE' | translate }}</h1>
+    @if (loginError()) {
+    <div class="general-error">{{ loginError() }}</div>
+    }
+  </div>
+
+  <div class="login-tile">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <!-- First Name -->
+      <div class="form-group">
+        <label for="firstName">{{ 'LOGIN.FIRST_NAME' | translate }}</label>
+        <input
+          id="firstName"
+          type="text"
+          formControlName="firstName"
+          [placeholder]="'LOGIN.FIRST_NAME' | translate"
+        />
+        @if (submitted() && f.firstName.errors?.['required']) {
+        <div class="error-text">{{ 'LOGIN.ERROR.REQUIRED_FIRST_NAME' | translate }}</div>
+        }
+      </div>
+
+      <!-- Surname -->
+      <div class="form-group">
+        <label for="surname">{{ 'LOGIN.SURNAME' | translate }}</label>
+        <input
+          id="surname"
+          type="text"
+          formControlName="surname"
+          [placeholder]="'LOGIN.SURNAME' | translate"
+        />
+        @if (submitted() && f.surname.errors?.['required']) {
+        <div class="error-text">{{ 'LOGIN.ERROR.REQUIRED_SURNAME' | translate }}</div>
+        }
+      </div>
+
+      <!-- Room Number -->
+      <div class="form-group">
+        <label for="roomNumber">{{ 'LOGIN.ROOM_NUMBER' | translate }}</label>
+        <input
+          id="roomNumber"
+          type="number"
+          formControlName="roomNumber"
+          [placeholder]="'LOGIN.ROOM_NUMBER' | translate"
+        />
+        @if (submitted() && f.roomNumber.errors?.['required']) {
+        <div class="error-text">{{ 'LOGIN.ERROR.REQUIRED_ROOM' | translate }}</div>
+        } @else if (submitted() && f.roomNumber.errors?.['pattern']) {
+        <div class="error-text">{{ 'LOGIN.ERROR.INVALID_ROOM_FORMAT' | translate }}</div>
+        } @else if (submitted() && f.roomNumber.errors?.['min']) {
+        <div class="error-text">{{ 'LOGIN.ERROR.INVALID_ROOM_MIN' | translate }}</div>
+        }
+      </div>
+
+      <!-- Date of Birth -->
+      <div class="form-group dob-group">
+        <label>{{ 'LOGIN.DATE_OF_BIRTH' | translate }}</label>
+        <div class="dob-inputs">
+          <input
+            type="text"
+            formControlName="dobDay"
+            [placeholder]="'LOGIN.DAY_PLACEHOLDER' | translate"
+            class="dob-day"
+            maxlength="2"
+          />
+          <select formControlName="dobMonth" class="dob-month">
+            <option value="" disabled selected>{{ 'LOGIN.MONTH_PLACEHOLDER' | translate }}</option>
+            @for (month of constants.MONTHS; track month) {
+            <option [value]="month">{{ month }}</option>
+            }
+          </select>
+          <input
+            type="text"
+            formControlName="dobYear"
+            [placeholder]="'LOGIN.YEAR_PLACEHOLDER' | translate"
+            class="dob-year"
+            maxlength="4"
+          />
+        </div>
+        @if (submitted() && f.dobDay.errors?.['invalidDay']) {
+        <div class="error-text">{{ 'LOGIN.ERROR.INVALID_DAY_RANGE' | translate }}</div>
+        } @else if (submitted() && (f.dobDay.errors || f.dobMonth.errors || f.dobYear.errors)) {
+        <div class="error-text">{{ 'LOGIN.ERROR.INVALID_DOB' | translate }}</div>
+        }
+      </div>
+
+      <button type="submit" class="primary-btn login-btn" [disabled]="isLoading()">
+        {{ 'LOGIN.BUTTON' | translate }}
+      </button>
+    </form>
+  </div>
+</div>

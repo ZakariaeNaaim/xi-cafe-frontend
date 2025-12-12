@@ -11,5 +11,20 @@ export const APP_CONSTANTS = {
   },
   ROUTES: {
     LOGIN: '/login',
+    PLANS: '/plans',
   },
+  MONTHS: [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ],
 };

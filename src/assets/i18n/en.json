@@ -7,7 +7,29 @@
     "BACK": "Back",
     "LOGOUT": "Logout"
   },
-
+  "LOGIN": {
+    "TITLE": "Access the Internet",
+    "FIRST_NAME": "First name",
+    "SURNAME": "Surname",
+    "ROOM_NUMBER": "Room number",
+    "DATE_OF_BIRTH": "Date of birth",
+    "DAY_PLACEHOLDER": "Day",
+    "MONTH_PLACEHOLDER": "Month",
+    "YEAR_PLACEHOLDER": "Year",
+    "BUTTON": "Login",
+    "SUCCESS": "Login successful",
+    "ERROR": {
+      "INVALID_CREDENTIALS": "Invalid credentials. Please check your information and try again.",
+      "FAILED": "Login failed. Please check your credentials.",
+      "REQUIRED_FIRST_NAME": "Please enter your First name",
+      "REQUIRED_SURNAME": "Please enter your Surname",
+      "REQUIRED_ROOM": "Please enter your Room number",
+      "INVALID_DOB": "Please enter a valid Date of birth",
+      "INVALID_DAY_RANGE": "Day must be between 1 and 31",
+      "INVALID_ROOM_FORMAT": "Room number must be a valid number",
+      "INVALID_ROOM_MIN": "Room number must be at least 1"
+    }
+  },
   "FOOTER": {
     "TERMS": "Terms and Condition",
     "FAQ": "FAQ",
