@@ -1,0 +1,149 @@
+@use './styles/variables' as *;
+@use './styles/mixins' as *;
+
+:root {
+  --bg-main: #{$color-bg-main};
+  --header-footer-bg: #{$color-header-footer-bg};
+  --title-color: #{$color-title};
+  --text-main: #{$color-text-main};
+
+  --link-color: #{$color-link};
+  --link-hover: #{$color-link-hover};
+
+  --footer-link: #{$color-footer-link};
+  --footer-link-hover: #{$color-footer-link-hover};
+
+  --btn-primary-bg: #{$color-btn-primary-bg};
+  --btn-primary-border: #{$color-btn-primary-border};
+  --btn-primary-text: #{$color-btn-primary-text};
+  --btn-primary-hover-bg: #{$color-btn-primary-hover-bg};
+  --btn-primary-hover-border: #{$color-btn-primary-hover-border};
+
+  --tile-bg: #{$color-tile-bg};
+  --input-border: #{$color-input-border};
+  --error-color: #{$color-error};
+
+  --border-radius: #{$border-radius};
+  --spacing-unit: #{$spacing-unit};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: $font-family-primary;
+  margin: 0;
+  padding: 0;
+  background-color: $color-bg-main;
+  color: $color-text-main;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color-title;
+  font-weight: $font-weight-bold;
+  margin: 0 0 $spacing-md 0;
+}
+
+p {
+  margin: 0 0 $spacing-md 0;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: $color-link;
+  @include transition(color);
+
+  &:hover {
+    color: $color-link-hover;
+  }
+}
+
+/* Buttons */
+button {
+  border-radius: $border-radius;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 0.75rem 1.5rem;
+  font-family: inherit;
+  font-weight: $font-weight-semibold;
+  @include transition(all);
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+/* Inputs */
+input,
+select {
+  border-radius: $border-radius;
+  border: 1px solid $color-input-border;
+  padding: 0.75rem;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  @include transition(border-color);
+
+  &:focus {
+    outline: none;
+    border-color: $color-link-hover;
+  }
+}
+
+/* Utility Classes */
+.primary-btn {
+  background-color: $color-btn-primary-bg;
+  border-color: $color-btn-primary-border;
+  color: $color-btn-primary-text;
+
+  &:hover:not(:disabled) {
+    background-color: $color-btn-primary-hover-bg;
+    border-color: $color-btn-primary-hover-border;
+  }
+}
+
+.secondary-btn {
+  background-color: $color-btn-secondary-bg;
+  border-color: $color-btn-secondary-border;
+  color: $color-btn-secondary-text;
+
+  &:hover:not(:disabled) {
+    background-color: rgba($color-btn-primary-bg, 0.1);
+  }
+}
+
+.error-text {
+  color: $color-error;
+  font-size: $font-size-sm;
+  margin-top: $spacing-xs;
+}
+
+.container {
+  @include container;
+}
+
+/* App Root - Flex Layout for Sticky Footer */
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}

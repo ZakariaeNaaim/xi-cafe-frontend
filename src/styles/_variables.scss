@@ -1,0 +1,86 @@
+// Brand Colors
+$color-bg-main: #ffffff;
+$color-header-footer-bg: #303030;
+$color-title: #0a0a0a;
+$color-text-main: #313131;
+$color-text-secondary: #666666;
+
+// Links
+$color-link: #313131;
+$color-link-hover: #fc9031;
+
+// Footer
+$color-footer-link: #fc9031;
+$color-footer-link-hover: #fc9b46;
+
+// Buttons
+$color-btn-primary-bg: #fc9031;
+$color-btn-primary-border: #fc9031;
+$color-btn-primary-text: #ffffff;
+$color-btn-primary-hover-bg: #fc8218;
+$color-btn-primary-hover-border: #fc8218;
+
+$color-btn-secondary-bg: transparent;
+$color-btn-secondary-border: #fc9031;
+$color-btn-secondary-text: #fc9031;
+
+// UI Elements
+$color-tile-bg: #f7f7f7;
+$color-input-border: #303030;
+$color-error: #d32f2f;
+$color-success: #2e7d32;
+
+// Layout
+$border-radius: 8px;
+$border-radius-sm: 4px;
+$border-radius-lg: 12px;
+
+// Spacing
+$spacing-unit: 1rem;
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-xxl: 3rem;
+
+// Typography
+$font-family-primary: 'Montserrat', sans-serif;
+$font-size-base: 1rem;
+$font-size-sm: 0.875rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Transitions
+$transition-speed-fast: 0.2s;
+$transition-speed-normal: 0.3s;
+$transition-speed-slow: 0.5s;
+$transition-ease: ease;
+
+// Breakpoints
+$breakpoint-xs: 480px;
+$breakpoint-sm: 600px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1200px;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 6px 20px rgba(0, 0, 0, 0.15);
+
+// Z-index
+$z-index-header: 100;
+$z-index-modal: 1000;
+$z-index-overlay: 999;
+
+// Layout sizes
+$max-width-container: 1200px;
+$max-width-content: 800px;
+$header-height: 60px;
+$footer-height: 80px;

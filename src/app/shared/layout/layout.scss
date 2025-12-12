@@ -1,0 +1,14 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.xiwl-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.xiwl-main-content {
+  flex: 1;
+  padding: $spacing-xl $spacing-md;
+  @include container;
+}

@@ -1,0 +1,93 @@
+@use 'variables' as *;
+
+// Flexbox mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Responsive breakpoints
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: $breakpoint-xs) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  }
+}
+
+// Container
+@mixin container {
+  max-width: $max-width-container;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+// Button reset
+@mixin button-reset {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+// Transition
+@mixin transition($properties...) {
+  transition-duration: $transition-speed-normal;
+  transition-timing-function: $transition-ease;
+  transition-property: $properties;
+}
+
+// Text truncate
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Card/Tile
+@mixin card {
+  background-color: $color-tile-bg;
+  border-radius: $border-radius;
+  padding: $spacing-xl;
+  box-shadow: $shadow-sm;
+}
+
+// Hover lift effect
+@mixin hover-lift {
+  @include transition(transform, box-shadow);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: $shadow-sm;
+  }
+}

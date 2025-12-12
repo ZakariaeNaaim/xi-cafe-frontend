@@ -1,0 +1,31 @@
+.app-header {
+  background-color: var(--header-footer-bg);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.logo-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  height: 40px;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    height: 32px;
+  }
+}

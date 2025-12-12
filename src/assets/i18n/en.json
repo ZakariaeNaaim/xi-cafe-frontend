@@ -1,0 +1,21 @@
+{
+  "APP": {
+    "TITLE": "XiCafe Portal",
+    "BRAND_NAME": "XiCafe"
+  },
+  "NAVIGATION": {
+    "BACK": "Back",
+    "LOGOUT": "Logout"
+  },
+
+  "FOOTER": {
+    "TERMS": "Terms and Condition",
+    "FAQ": "FAQ",
+    "COMPLEMENTARY": "Complementary browsing"
+  },
+  "VALIDATION": {
+    "REQUIRED": "This field is required",
+    "INVALID_FORMAT": "Invalid format",
+    "OUT_OF_RANGE": "Value is out of range"
+  }
+}

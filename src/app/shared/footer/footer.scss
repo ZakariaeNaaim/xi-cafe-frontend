@@ -1,0 +1,35 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.xiwl-footer {
+  background-color: $color-header-footer-bg;
+  padding: $spacing-lg 0;
+  margin-top: auto;
+}
+
+.xiwl-footer__container {
+  @include container;
+  @include flex-center;
+}
+
+.xiwl-footer__links {
+  display: flex;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.xiwl-footer__link {
+  color: $color-footer-link;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+
+  &:hover {
+    color: $color-footer-link-hover;
+  }
+}
+
+.xiwl-footer__separator {
+  color: $color-text-secondary;
+}
