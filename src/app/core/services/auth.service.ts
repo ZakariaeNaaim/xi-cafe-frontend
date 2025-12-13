@@ -1,8 +1,9 @@
 import { inject, Injectable } from '@angular/core';
 import { Observable, of, delay, throwError } from 'rxjs';
 import { LoginRequest, LoginResponse } from '../models';
-import { MOCK_USERS, TIMING } from '../constants/validation.constants';
+import { TIMING } from '../constants/validation.constants';
 import { TranslateService } from '@ngx-translate/core';
+import db from '../../../../db.json';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +15,7 @@ export class AuthService {
     return of(null)
       .pipe(delay(TIMING.AUTH_DELAY_MS))
       .pipe(() => {
-        const matchedUser = MOCK_USERS.find(
+        const matchedUser = db.users.find(
           (user) =>
             user.firstName.toLowerCase() === credentials.firstName.toLowerCase() &&
             user.surname.toLowerCase() === credentials.surname.toLowerCase() &&

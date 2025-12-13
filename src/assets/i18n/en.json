@@ -30,6 +30,27 @@
       "INVALID_ROOM_MIN": "Room number must be at least 1"
     }
   },
+  "PLANS": {
+    "TITLE": "Let's Get You Online",
+    "VOUCHER_TEXT": "Have a voucher?",
+    "VOUCHER_LINK": "Redeem it here",
+    "STEP1_TITLE": "Step 1: Select your plan",
+    "STEP2_TITLE": "Step 2: Select plan duration",
+    "STEP3_TITLE": "Step 3: Select number of devices",
+    "SUMMARY_TITLE": "Your plan",
+    "SUMMARY_PLAN": "Plan:",
+    "SUMMARY_DEVICES": "Devices:",
+    "SUMMARY_DURATION": "Duration:",
+    "SUMMARY_PRICE": "Price:",
+    "PLACEHOLDER_SELECT": "Select a plan...",
+    "BUTTON_PURCHASE": "Purchase",
+    "FROM": "From"
+  },
+  "PURCHASE": {
+    "ERROR": {
+      "SELECTION_MISSING": "Please select a plan and duration to proceed."
+    }
+  },
   "FOOTER": {
     "TERMS": "Terms and Condition",
     "FAQ": "FAQ",

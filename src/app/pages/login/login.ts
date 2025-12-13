@@ -34,9 +34,9 @@ export class LoginComponent {
         Validators.pattern(VALIDATION.PATTERNS.NUMERIC),
       ],
     ],
-    dobDay: ['', [Validators.required, Validators.pattern(VALIDATION.PATTERNS.DAY), dayValidator]],
-    dobMonth: ['', Validators.required],
-    dobYear: ['', [Validators.required, Validators.pattern(VALIDATION.PATTERNS.YEAR)]],
+    dobDay: [1, [Validators.required, Validators.pattern(VALIDATION.PATTERNS.DAY), dayValidator]],
+    dobMonth: ['January', Validators.required],
+    dobYear: [2000, [Validators.required, Validators.pattern(VALIDATION.PATTERNS.YEAR)]],
   });
 
   submitted = signal(false);

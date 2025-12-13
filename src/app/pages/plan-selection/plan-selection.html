@@ -1,1 +1,106 @@
-<div>plan selection works</div>
+<div class="plans-container">
+  <div class="header-section">
+    <h1 class="page-title">{{ 'PLANS.TITLE' | translate }}</h1>
+    <p class="voucher-text">
+      {{ 'PLANS.VOUCHER_TEXT' | translate }}
+      <a [routerLink]="constants.ROUTES.VOUCHER">{{ 'PLANS.VOUCHER_LINK' | translate }}</a>
+    </p>
+    @if (purchaseError()) {
+    <div class="error-msg">{{ purchaseError() }}</div>
+    }
+  </div>
+
+  <div class="content-split">
+    <!-- Configurator -->
+    <div class="configurator">
+      <!-- Step 1 -->
+      <section class="step-section">
+        <h2>{{ 'PLANS.STEP1_TITLE' | translate }}</h2>
+        <div class="tiles-grid">
+          @for (tier of plans(); track tier.id) {
+          <div
+            class="tile plan-tile"
+            [class.selected]="selectedTier()?.id === tier.id"
+            (click)="selectTier(tier)"
+          >
+            <div class="tile-header">{{ tier.name }}</div>
+            <div class="tile-desc">{{ tier.description }}</div>
+            <div class="tile-price">
+              {{ 'PLANS.FROM' | translate }} {{ tier.basePrice | currency }}
+            </div>
+          </div>
+          }
+        </div>
+      </section>
+
+      <!-- Step 2 -->
+      <section class="step-section">
+        <h2>{{ 'PLANS.STEP2_TITLE' | translate }}</h2>
+        <div class="tiles-grid">
+          @for (dur of durations(); track dur.id) {
+          <div
+            class="tile duration-tile"
+            [class.selected]="selectedDuration()?.id === dur.id"
+            (click)="selectDuration(dur)"
+          >
+            {{ dur.name }}
+          </div>
+          }
+        </div>
+      </section>
+
+      <!-- Step 3 -->
+      <section class="step-section">
+        <h2>{{ 'PLANS.STEP3_TITLE' | translate }}</h2>
+        <div class="tiles-grid small-tiles">
+          @for (dev of deviceOptions(); track dev) {
+          <div
+            class="tile device-tile"
+            [class.selected]="selectedDevices() === dev"
+            (click)="selectDevices(dev)"
+          >
+            {{ dev }}
+          </div>
+          }
+        </div>
+      </section>
+    </div>
+
+    <!-- Summary -->
+    <div class="summary-sidebar">
+      <div class="summary-card">
+        <h3>{{ 'PLANS.SUMMARY_TITLE' | translate }}</h3>
+
+        @if (selectedTier(); as tier) {
+        <div class="summary-item">
+          <span class="label">{{ 'PLANS.SUMMARY_PLAN' | translate }}</span>
+          <span class="value">{{ tier.name }}</span>
+        </div>
+        } @else {
+        <div class="placeholder-text">{{ 'PLANS.PLACEHOLDER_SELECT' | translate }}</div>
+        }
+
+        <div class="summary-item">
+          <span class="label">{{ 'PLANS.SUMMARY_DEVICES' | translate }}</span>
+          <span class="value">{{ selectedDevices() }}</span>
+        </div>
+
+        @if (selectedDuration(); as dur) {
+        <div class="summary-item">
+          <span class="label">{{ 'PLANS.SUMMARY_DURATION' | translate }}</span>
+          <span class="value">{{ dur.name }}</span>
+        </div>
+        }
+
+        <div class="total-price">
+          <span class="label">{{ 'PLANS.SUMMARY_PRICE' | translate }}</span>
+          <span class="value">{{ totalPrice() | currency : 'EUR' }}</span>
+        </div>
+
+        <button class="primary-btn purchase-btn" (click)="onPurchase()">
+          {{ 'PLANS.BUTTON_PURCHASE' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

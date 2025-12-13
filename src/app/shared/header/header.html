@@ -3,5 +3,8 @@
     <div class="logo-container">
       <img [src]="constants.BRAND.LOGO_URL" [alt]="constants.BRAND.NAME + ' Logo'" class="logo" />
     </div>
+    @if (showLogout) {
+    <a routerLink="/login" class="logout-link">{{ 'NAVIGATION.LOGOUT' | translate }}</a>
+    }
   </div>
 </header>

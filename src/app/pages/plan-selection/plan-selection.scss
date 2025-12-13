@@ -1,0 +1,150 @@
+.plans-container {
+  width: 100%;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  font-size: 2rem;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.voucher-text {
+  margin-top: 0.5rem;
+  a {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}
+
+.content-split {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.configurator {
+  flex: 2;
+  min-width: 300px;
+}
+
+.summary-sidebar {
+  flex: 1;
+  min-width: 250px;
+}
+
+.step-section {
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+
+  &.small-tiles {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.tile {
+  background-color: var(--tile-bg);
+  border: 2px solid transparent;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &:hover {
+    border-color: #ddd;
+  }
+
+  &.selected {
+    border-color: var(--btn-primary-bg);
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(252, 144, 49, 0.2);
+  }
+}
+
+.plan-tile {
+  min-height: 120px;
+  .tile-header {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  .tile-desc {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: auto;
+  }
+  .tile-price {
+    font-weight: 600;
+    color: var(--btn-primary-bg);
+    margin-top: 0.5rem;
+  }
+}
+
+.summary-card {
+  background: var(--tile-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  position: sticky;
+  top: 1rem;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 0.25rem;
+
+  .label {
+    color: #555;
+  }
+  .value {
+    font-weight: 600;
+  }
+}
+
+.total-price {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--title-color);
+}
+
+.purchase-btn {
+  width: 100%;
+}
+
+.error-msg {
+  color: var(--error-color);
+  margin-top: 1rem;
+}
