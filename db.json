@@ -1,1 +1,40 @@
-{}
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "surname": "Doe",
+      "roomNumber": 1,
+      "dateOfBirth": {
+        "day": 1,
+        "month": "January",
+        "year": 2000
+      }
+    }
+  ],
+  "plans": [
+    {
+      "id": "social",
+      "name": "Social",
+      "description": "Access to social media apps only.",
+      "basePrice": 5.0
+    },
+    {
+      "id": "basic",
+      "name": "Basic",
+      "description": "Web browsing and emails.",
+      "basePrice": 10.0
+    },
+    {
+      "id": "premium",
+      "name": "Premium",
+      "description": "Streaming and high-speed access.",
+      "basePrice": 15.0
+    }
+  ],
+  "durations": [
+    { "id": "24h", "name": "24 Hours", "multiplier": 1 },
+    { "id": "cruise", "name": "Whole Cruise", "multiplier": 5 }
+  ],
+  "deviceOptions": [1, 2, 3, 4]
+}

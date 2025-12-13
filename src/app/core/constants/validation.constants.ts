@@ -34,13 +34,3 @@ export const MOCK_DATA = {
   FAILURE_RATE: 0.2,
   VOUCHER_CODES: ['VALID123', 'FREEWIFI', 'CRUISE2024'],
 } as const;
-
-export const MOCK_USERS: User[] = [
-  {
-    id: 1,
-    firstName: 'John',
-    surname: 'Doe',
-    roomNumber: 101,
-    dateOfBirth: { day: '15', month: 'March', year: '1990' },
-  },
-] as const;

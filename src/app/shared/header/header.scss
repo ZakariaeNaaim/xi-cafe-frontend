@@ -24,6 +24,20 @@
   height: 40px;
 }
 
+.logout-link {
+  position: absolute;
+  right: 1rem;
+  color: var(--footer-link);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--footer-link-hover);
+    text-decoration: underline;
+  }
+}
+
 @media (max-width: 600px) {
   .logo {
     height: 32px;
