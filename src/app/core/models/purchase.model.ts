@@ -1,4 +1,3 @@
-// Purchase Models
 export interface PurchaseRequest {
   planName: string;
   duration: string;

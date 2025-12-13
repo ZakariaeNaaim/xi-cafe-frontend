@@ -37,5 +37,23 @@
     { "id": "cruise", "name": "Whole Cruise", "multiplier": 5 }
   ],
   "deviceOptions": [1, 2, 3, 4],
-  "upgrades": [{ "name": "Premium Upgrade", "description": "Get faster speeds for streaming." }]
+  "upgrades": [{ "name": "Premium Upgrade", "description": "Get faster speeds for streaming." }],
+  "vouchers": [
+    {
+      "id": 1,
+      "code": "VALID123",
+      "planId": "basic",
+      "planName": "Basic",
+      "duration": "24 Hours",
+      "active": true
+    },
+    {
+      "id": 2,
+      "code": "FREEWIFI",
+      "planId": "premium",
+      "planName": "Premium",
+      "duration": "Whole Cruise",
+      "active": true
+    }
+  ]
 }
