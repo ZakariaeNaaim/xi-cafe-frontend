@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { Observable, of, delay, throwError, switchMap } from 'rxjs';
 import { PurchaseRequest, PurchaseResponse } from '../models';
 import { TranslateService } from '@ngx-translate/core';
-import { TIMING } from '../constants/validation.constants';
+import { TIMING } from '../constants/timing.constants';
 
 @Injectable({ providedIn: 'root' })
 export class PurchaseService {

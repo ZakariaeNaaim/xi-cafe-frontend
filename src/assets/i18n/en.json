@@ -70,6 +70,19 @@
     "BUTTON_BROWSE": "Start browsing",
     "UPGRADE_TITLE": "Upgrade options"
   },
+  "VOUCHER": {
+    "TITLE": "Redeem a voucher",
+    "CODE_LABEL": "Voucher Code",
+    "CODE_PLACEHOLDER": "Enter code",
+    "BUTTON_REDEEM": "Redeem",
+    "SUCCESS": "Voucher code accepted!",
+    "ERROR": {
+      "EMPTY": "Please enter a voucher code.",
+      "INVALID": "Invalid voucher code. Please try again.",
+      "VOUCHER_EMPTY": "Please enter a voucher code.",
+      "VOUCHER_INVALID": "Invalid voucher code. Please try again."
+    }
+  },
   "FOOTER": {
     "TERMS": "Terms and Condition",
     "FAQ": "FAQ",

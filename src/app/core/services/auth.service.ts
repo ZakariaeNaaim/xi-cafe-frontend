@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { Observable, of, delay, throwError } from 'rxjs';
 import { LoginRequest, LoginResponse } from '../models';
-import { TIMING } from '../constants/validation.constants';
+import { TIMING } from '../constants/timing.constants';
 import { TranslateService } from '@ngx-translate/core';
 import db from '../../../../db.json';
 

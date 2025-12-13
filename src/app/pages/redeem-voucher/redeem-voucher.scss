@@ -1,0 +1,47 @@
+.voucher-container {
+  max-width: 500px;
+  margin: 10rem auto;
+  position: relative;
+}
+
+.back-link-container {
+  margin-bottom: 1rem;
+}
+
+.back-link {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--link-color);
+
+  &:hover {
+    color: var(--link-hover);
+  }
+}
+
+.voucher-card {
+  background: var(--tile-bg);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+}
+
+.redeem-btn {
+  width: 100%;
+}
+
+.error-msg {
+  color: var(--error-color);
+  margin-bottom: 1rem;
+}
