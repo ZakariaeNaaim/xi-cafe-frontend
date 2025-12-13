@@ -24,6 +24,7 @@ export class ConnectedComponent implements OnInit {
   private router = inject(Router);
 
   appConstants = APP_CONSTANTS;
+  DurationType = DurationType;
 
   private voyageExpiration = toSignal(this.translate.stream('CONNECTED.EXPIRATION.VOYAGE'), {
     initialValue: '',
@@ -37,8 +38,9 @@ export class ConnectedComponent implements OnInit {
     const planName = state.plan?.name ?? this.appConstants.DEFAULTS.PLAN_NAME;
     const devices = state.devices;
     const expiration = this._calculateExpiration(state.duration);
+    const durationType = state.duration?.type;
 
-    return { planName, devices, expiration };
+    return { planName, devices, expiration, durationType };
   });
 
   ngOnInit(): void {

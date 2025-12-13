@@ -1,6 +1,7 @@
 export enum DurationType {
-  Fixed = 'fixed',
-  Voyage = 'voyage',
+  Fixed = 'fixed', // e.g. 24 hours
+  Voyage = 'voyage', // whole cruise
+  Data = 'data', // e.g. 2 GB, 10 GB (future)
 }
 
 export interface Plan {
