@@ -1,0 +1,59 @@
+.purchase-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8rem;
+}
+
+.confirmation-card {
+  background-color: var(--tile-bg);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.page-title {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.confirmation-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  color: #555;
+
+  strong {
+    color: var(--title-color);
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--input-border);
+
+  &:hover {
+    border-color: #999;
+    color: #000;
+  }
+}
+
+.confirm-btn {
+  min-width: 120px;
+}
+
+.error-msg {
+  color: var(--error-color);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
