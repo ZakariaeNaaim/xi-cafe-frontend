@@ -1,1 +1,33 @@
-<div>purchase works!</div>
+<div class="purchase-container">
+  <div class="confirmation-card">
+    <h1 class="page-title">{{ 'PURCHASE.TITLE' | translate }}</h1>
+
+    <p class="confirmation-text">
+      {{
+        'PURCHASE.DESCRIPTION'
+          | translate : { planName: details().planName, price: (details().price | currency) }
+      }}
+    </p>
+
+    @if (errorMsg()) {
+    <div class="error-msg">{{ errorMsg() }}</div>
+    }
+
+    <div class="actions">
+      <button
+        class="primary-btn confirm-btn"
+        (click)="confirmPurchase()"
+        [disabled]="isProcessing()"
+      >
+        {{
+          isProcessing()
+            ? ('PURCHASE.BUTTON_PROCESSING' | translate)
+            : ('PURCHASE.BUTTON_CONFIRM' | translate)
+        }}
+      </button>
+      <button class="secondary-btn back-btn" (click)="goBack()" [disabled]="isProcessing()">
+        {{ 'PURCHASE.BUTTON_BACK' | translate }}
+      </button>
+    </div>
+  </div>
+</div>

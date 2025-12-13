@@ -47,7 +47,16 @@
     "FROM": "From"
   },
   "PURCHASE": {
+    "TITLE": "Confirm your purchase",
+    "DESCRIPTION": "You are about to purchase {{planName}} package for {{price}}. Please confirm to proceed with the purchase.",
+    "BUTTON_CONFIRM": "Confirm",
+    "BUTTON_PROCESSING": "Processing...",
+    "BUTTON_BACK": "Back",
+    "SUCCESS": "Purchase completed successfully",
     "ERROR": {
+      "INVALID_DATA": "Invalid purchase data. Please try again.",
+      "PAYMENT_FAILED": "Payment processing failed. Please check your payment method and try again.",
+      "PURCHASE_FAILED": "Purchase failed. Please try again.",
       "SELECTION_MISSING": "Please select a plan and duration to proceed."
     }
   },

@@ -15,6 +15,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 export class Header {
   private router = inject(Router);
   showLogout = false;
+  showBackButton = false;
   currentUrl = '';
 
   readonly constants = APP_CONSTANTS;
@@ -27,7 +28,12 @@ export class Header {
       )
       .subscribe((event: NavigationEnd) => {
         this.currentUrl = event.url;
-        this.showLogout = event.url !== '/login' && event.url !== '/';
+        this.showLogout = event.url !== this.constants.ROUTES.LOGIN && event.url !== '/';
+        this.showBackButton = event.url.startsWith(this.constants.ROUTES.VOUCHER);
       });
+  }
+
+  goBack() {
+    this.router.navigate([this.constants.ROUTES.PLANS]);
   }
 }

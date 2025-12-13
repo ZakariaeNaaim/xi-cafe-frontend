@@ -56,17 +56,13 @@ export class PlanSelectionComponent {
       this.purchaseError.set(this.translate.instant('PURCHASE.ERROR.SELECTION_MISSING'));
       return;
     }
-    this.router.navigate(
-      [this.constants.ROUTES.CONNECTED]
-      // TODO : redirect to purchase confirmation
-      //   , {
-      //   queryParams: {
-      //     plan: this.selectedTier()?.name,
-      //     duration: this.selectedDuration()?.name,
-      //     devices: this.selectedDevices(),
-      //     price: this.totalPrice(),
-      //   },
-      // }
-    );
+    this.router.navigate([APP_CONSTANTS.ROUTES.PURCHASE], {
+      queryParams: {
+        plan: this.selectedTier()?.name,
+        duration: this.selectedDuration()?.name,
+        devices: this.selectedDevices(),
+        price: this.totalPrice(),
+      },
+    });
   }
 }
