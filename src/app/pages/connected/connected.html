@@ -23,9 +23,9 @@
         <span class="value">{{ details().expiration }}</span>
       </div>
     </div>
-    <button (click)="startBrowsing()" class="primary-btn">
+    <xiwl-button (clicked)="startBrowsing()" customClass="primary-btn">
       {{ 'CONNECTED.BUTTON_BROWSE' | translate }}
-    </button>
+    </xiwl-button>
   </div>
 
   <div class="xiwl-connected__upgrade-section">

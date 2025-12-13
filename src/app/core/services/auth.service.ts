@@ -3,6 +3,8 @@ import { Observable, of, delay, throwError } from 'rxjs';
 import { LoginRequest, LoginResponse } from '../models';
 import { TIMING } from '../constants/timing.constants';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
+import { APP_CONSTANTS } from '../constants/app-data.constants';
 import db from '../../../../db.json';
 
 @Injectable({
@@ -10,6 +12,7 @@ import db from '../../../../db.json';
 })
 export class AuthService {
   private translate = inject(TranslateService);
+  private router = inject(Router);
 
   login(credentials: LoginRequest): Observable<LoginResponse> {
     return of(null)
@@ -41,6 +44,6 @@ export class AuthService {
   }
 
   logout(): void {
-    console.log('User logged out');
+    this.router.navigate([APP_CONSTANTS.ROUTES.LOGIN]);
   }
 }

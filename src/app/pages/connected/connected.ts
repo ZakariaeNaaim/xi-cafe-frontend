@@ -1,45 +1,74 @@
-import { ChangeDetectionStrategy, Component, inject, computed } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ChangeDetectionStrategy, Component, inject, computed, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { APP_CONSTANTS } from '../../core/constants/app-data.constants';
-import { Upgrade } from '../../core/models';
+import { Duration, DurationType, Upgrade } from '../../core/models';
 import { DataService } from '../../core/services/data.service';
+import { PurchaseStateService } from '../../core/services/purchase-state.service';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { XiwlButtonComponent } from '../../shared/components/xiwl-button/xiwl-button.component';
 
 @Component({
   selector: 'app-connected',
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, XiwlButtonComponent],
   templateUrl: './connected.html',
   styleUrl: './connected.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
 })
-export class ConnectedComponent {
-  private route = inject(ActivatedRoute);
+export class ConnectedComponent implements OnInit {
+  private purchaseState = inject(PurchaseStateService);
   private dataService = inject(DataService);
+  private translate = inject(TranslateService);
+  private router = inject(Router);
 
-  private readonly queryParams = toSignal<Params>(this.route.queryParams);
+  appConstants = APP_CONSTANTS;
 
-  details = computed(() => {
-    const params = this.queryParams() ?? {};
-    const planName = params['plan'] ?? 'Basic';
-
-    const rawDevices = params['devices'];
-    const parsedDevices = Number.parseInt(typeof rawDevices === 'string' ? rawDevices : '1', 10);
-    const devices = Number.isNaN(parsedDevices) ? 1 : parsedDevices;
-
-    const date = new Date();
-    date.setHours(date.getHours() + 24);
-    const expiration = date.toLocaleString();
-
-    return { planName, devices, expiration };
+  private voyageExpiration = toSignal(this.translate.stream('CONNECTED.EXPIRATION.VOYAGE'), {
+    initialValue: '',
   });
 
   private readonly allUpgrades = toSignal<Upgrade[]>(this.dataService.getUpgrades());
   upgrades = computed(() => this.allUpgrades());
 
+  details = computed(() => {
+    const state = this.purchaseState.selection();
+    const planName = state.plan?.name ?? this.appConstants.DEFAULTS.PLAN_NAME;
+    const devices = state.devices;
+    const expiration = this._calculateExpiration(state.duration);
+
+    return { planName, devices, expiration };
+  });
+
+  ngOnInit(): void {
+    const state = this.purchaseState.selection();
+    if (!state.plan || !state.duration) {
+      this.router.navigate([this.appConstants.ROUTES.PLANS]);
+    }
+  }
+
   startBrowsing() {
-    window.open(APP_CONSTANTS.BRAND.EXTERNAL_LINKS.BROWSING_START);
+    window.location.href = this.appConstants.BRAND.EXTERNAL_LINKS.BROWSING_START;
+  }
+
+  private _calculateExpiration(duration: Duration | null): string {
+    if (!duration) {
+      const date = new Date();
+      date.setHours(date.getHours() + 24);
+      return date.toLocaleString();
+    }
+
+    if (duration.type === DurationType.Voyage) {
+      return this.voyageExpiration();
+    }
+
+    if (duration.type === DurationType.Fixed && duration.value) {
+      const date = new Date();
+      date.setHours(date.getHours() + duration.value);
+      return date.toLocaleString();
+    }
+
+    return '';
   }
 }

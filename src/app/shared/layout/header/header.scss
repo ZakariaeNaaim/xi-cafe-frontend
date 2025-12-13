@@ -1,3 +1,5 @@
+@use '../../../../styles/mixins' as *;
+
 .app-header {
   background-color: var(--header-footer-bg);
   padding: 1rem 0;
@@ -65,9 +67,9 @@
   }
 }
 
-@media (max-width: 600px) {
+@include respond-to(xs) {
   .logo {
-    height: 32px;
+    height: 24px;
   }
 
   .back-btn {

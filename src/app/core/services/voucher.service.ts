@@ -23,9 +23,10 @@ export class VoucherService {
     return forkJoin({
       vouchers: this.dataService.getVouchers(),
       plans: this.dataService.getPlans(),
+      durations: this.dataService.getDurations(),
     }).pipe(
       delay(TIMING.VOUCHER_DELAY_MS),
-      map(({ vouchers, plans }) => {
+      map(({ vouchers, plans, durations }) => {
         const voucher = vouchers.find((v) => v.code.toUpperCase() === normalized);
         if (!voucher) {
           throw {
@@ -35,14 +36,16 @@ export class VoucherService {
         }
 
         const plan = plans.find((p) => p.id === voucher.planId);
-        if (!plan) {
+        const duration = durations.find((d) => d.id === voucher.durationId);
+
+        if (!plan || !duration) {
           throw {
             success: false,
             message: this.translate.instant('VOUCHER.ERROR.VOUCHER_INVALID'),
           };
         }
 
-        return { success: true, planName: plan.name };
+        return { success: true, plan, duration };
       })
     );
   }

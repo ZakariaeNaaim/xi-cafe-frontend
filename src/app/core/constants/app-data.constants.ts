@@ -16,6 +16,10 @@ export const APP_CONSTANTS = {
     CONNECTED: '/connected',
     VOUCHER: '/voucher',
   },
+  DEFAULTS: {
+    PLAN_NAME: 'Basic',
+    Devices: 1,
+  },
   MONTHS: [
     'January',
     'February',

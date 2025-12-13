@@ -5,7 +5,8 @@
     <p class="confirmation-text">
       {{
         'PURCHASE.DESCRIPTION'
-          | translate : { planName: details().planName, price: (details().price | currency) }
+          | translate
+            : { planName: details().plan?.name, price: (details().plan?.basePrice | currency) }
       }}
     </p>
 
