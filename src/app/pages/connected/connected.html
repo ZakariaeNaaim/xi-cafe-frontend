@@ -1,0 +1,42 @@
+<div class="xiwl-connected">
+  <h1 class="xiwl-connected__title">{{ 'CONNECTED.TITLE' | translate }}</h1>
+
+  <!-- Current Booking -->
+  <div class="xiwl-connected__booking">
+    <div class="xiwl-connected__booking-header">
+      <h2>{{ 'CONNECTED.YOUR_PLAN' | translate : { planName: details().planName } }}</h2>
+    </div>
+    <div class="xiwl-connected__booking-details">
+      <div class="xiwl-connected__detail-row">
+        <span class="label">{{ 'CONNECTED.DEVICES' | translate }}</span>
+        <span class="value"
+          >{{ details().devices }}
+          {{
+            details().devices > 1
+              ? ('CONNECTED.DEVICES_PLURAL' | translate)
+              : ('CONNECTED.DEVICE' | translate)
+          }}</span
+        >
+      </div>
+      <div class="xiwl-connected__detail-row">
+        <span class="label">{{ 'CONNECTED.EXPIRES' | translate }}</span>
+        <span class="value">{{ details().expiration }}</span>
+      </div>
+    </div>
+    <button (click)="startBrowsing()" class="primary-btn">
+      {{ 'CONNECTED.BUTTON_BROWSE' | translate }}
+    </button>
+  </div>
+
+  <div class="xiwl-connected__upgrade-section">
+    <h3 class="xiwl-connected__upgrade-title">{{ 'CONNECTED.UPGRADE_TITLE' | translate }}</h3>
+    <div class="xiwl-connected__upgrades-grid">
+      @for (upg of upgrades(); track upg.name) {
+      <div class="xiwl-connected__upgrade-tile">
+        <div class="tile-header">{{ upg.name }}</div>
+        <div class="tile-desc">{{ upg.description }}</div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

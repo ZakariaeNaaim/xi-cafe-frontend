@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import db from '../../../../db.json';
 import { delay, Observable, of } from 'rxjs';
-import { Duration, Plan } from '../models';
+import { Duration, Plan, Upgrade } from '../models';
 import { TIMING } from '../constants/validation.constants';
 
 @Injectable({
@@ -29,6 +29,14 @@ export class DataService {
       .pipe(delay(TIMING.ANIMATION_FAST_MS))
       .pipe(() => {
         return of(db.deviceOptions);
+      });
+  }
+
+  getUpgrades(): Observable<Upgrade[]> {
+    return of(null)
+      .pipe(delay(TIMING.ANIMATION_FAST_MS))
+      .pipe(() => {
+        return of(db.upgrades);
       });
   }
 }

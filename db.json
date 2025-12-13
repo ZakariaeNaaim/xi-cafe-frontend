@@ -36,5 +36,6 @@
     { "id": "24h", "name": "24 Hours", "multiplier": 1 },
     { "id": "cruise", "name": "Whole Cruise", "multiplier": 5 }
   ],
-  "deviceOptions": [1, 2, 3, 4]
+  "deviceOptions": [1, 2, 3, 4],
+  "upgrades": [{ "name": "Premium Upgrade", "description": "Get faster speeds for streaming." }]
 }
