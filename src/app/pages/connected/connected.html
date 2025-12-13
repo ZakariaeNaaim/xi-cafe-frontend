@@ -18,10 +18,12 @@
           }}</span
         >
       </div>
+      @if(details().durationType !== DurationType.Data) {
       <div class="xiwl-connected__detail-row">
         <span class="label">{{ 'CONNECTED.EXPIRES' | translate }}</span>
         <span class="value">{{ details().expiration }}</span>
       </div>
+      }
     </div>
     <xiwl-button (clicked)="startBrowsing()" customClass="primary-btn">
       {{ 'CONNECTED.BUTTON_BROWSE' | translate }}
