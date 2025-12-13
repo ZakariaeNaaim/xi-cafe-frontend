@@ -1,0 +1,98 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.xiwl-connected {
+  @include flex-column;
+  align-items: center;
+  width: 100%;
+  padding-top: 3rem;
+}
+
+.xiwl-connected__title {
+  color: $color-success;
+  margin-bottom: $spacing-xl;
+}
+
+.xiwl-connected__booking {
+  @include card;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: $spacing-xxl;
+  text-align: center;
+}
+
+.xiwl-connected__booking-header h2 {
+  margin-top: 0;
+  color: $color-btn-primary-bg;
+}
+
+.xiwl-connected__booking-details {
+  margin: $spacing-lg 0;
+  text-align: left;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: $spacing-md 0;
+}
+
+.xiwl-connected__detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $spacing-sm;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .label {
+    color: $color-text-secondary;
+  }
+
+  .value {
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.xiwl-connected__upgrade-section {
+  width: 100%;
+  max-width: 800px;
+}
+
+.xiwl-connected__upgrade-title {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+  color: #555;
+  text-transform: uppercase;
+  font-size: $font-size-sm;
+  letter-spacing: 1px;
+}
+
+.xiwl-connected__upgrades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacing-lg;
+}
+
+.xiwl-connected__upgrade-tile {
+  background: white;
+  border: 1px solid #eee;
+  padding: $spacing-lg;
+  border-radius: $border-radius;
+  text-align: center;
+  @include transition(all);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    border-color: $color-btn-primary-bg;
+  }
+
+  .tile-header {
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-sm;
+  }
+
+  .tile-desc {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+  }
+}

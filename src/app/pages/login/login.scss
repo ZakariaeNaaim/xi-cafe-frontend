@@ -1,0 +1,62 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
+.login-tile {
+  background-color: var(--tile-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+}
+
+.dob-inputs {
+  display: flex;
+  gap: 0.5rem;
+
+  .dob-day {
+    flex: 1;
+  }
+  .dob-month {
+    flex: 2;
+  }
+  .dob-year {
+    flex: 1.5;
+  }
+}
+
+.login-btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.general-error {
+  background-color: #fee;
+  color: var(--error-color);
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  margin-bottom: 1rem;
+  border: 1px solid var(--error-color);
+}

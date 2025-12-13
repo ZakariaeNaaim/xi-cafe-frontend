@@ -1,7 +1,27 @@
 <header class="app-header">
   <div class="header-container">
+    @if (showBackButton) {
+    <button class="back-btn" (click)="goBack()">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M19 12H5M12 19l-7-7 7-7" />
+      </svg>
+      {{ 'NAVIGATION.BACK' | translate }}
+    </button>
+    }
     <div class="logo-container">
       <img [src]="constants.BRAND.LOGO_URL" [alt]="constants.BRAND.NAME + ' Logo'" class="logo" />
     </div>
+    @if (showLogout) {
+    <a [routerLink]="constants.ROUTES.LOGIN" class="logout-link">{{
+      'NAVIGATION.LOGOUT' | translate
+    }}</a>
+    }
   </div>
 </header>

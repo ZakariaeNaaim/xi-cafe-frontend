@@ -7,9 +7,9 @@ export interface User {
 }
 
 export interface DateOfBirth {
-  day: string;
+  day: number;
   month: string;
-  year: string;
+  year: number;
 }
 
 export interface LoginRequest {

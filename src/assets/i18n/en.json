@@ -7,7 +7,82 @@
     "BACK": "Back",
     "LOGOUT": "Logout"
   },
-
+  "LOGIN": {
+    "TITLE": "Access the Internet",
+    "FIRST_NAME": "First name",
+    "SURNAME": "Surname",
+    "ROOM_NUMBER": "Room number",
+    "DATE_OF_BIRTH": "Date of birth",
+    "DAY_PLACEHOLDER": "Day",
+    "MONTH_PLACEHOLDER": "Month",
+    "YEAR_PLACEHOLDER": "Year",
+    "BUTTON": "Login",
+    "SUCCESS": "Login successful",
+    "ERROR": {
+      "INVALID_CREDENTIALS": "Invalid credentials. Please check your information and try again.",
+      "FAILED": "Login failed. Please check your credentials.",
+      "REQUIRED_FIRST_NAME": "Please enter your First name",
+      "REQUIRED_SURNAME": "Please enter your Surname",
+      "REQUIRED_ROOM": "Please enter your Room number",
+      "INVALID_DOB": "Please enter a valid Date of birth",
+      "INVALID_DAY_RANGE": "Day must be between 1 and 31",
+      "INVALID_ROOM_FORMAT": "Room number must be a valid number",
+      "INVALID_ROOM_MIN": "Room number must be at least 1"
+    }
+  },
+  "PLANS": {
+    "TITLE": "Let's Get You Online",
+    "VOUCHER_TEXT": "Have a voucher?",
+    "VOUCHER_LINK": "Redeem it here",
+    "STEP1_TITLE": "Step 1: Select your plan",
+    "STEP2_TITLE": "Step 2: Select plan duration",
+    "STEP3_TITLE": "Step 3: Select number of devices",
+    "SUMMARY_TITLE": "Your plan",
+    "SUMMARY_PLAN": "Plan:",
+    "SUMMARY_DEVICES": "Devices:",
+    "SUMMARY_DURATION": "Duration:",
+    "SUMMARY_PRICE": "Price:",
+    "PLACEHOLDER_SELECT": "Select a plan...",
+    "BUTTON_PURCHASE": "Purchase",
+    "FROM": "From"
+  },
+  "PURCHASE": {
+    "TITLE": "Confirm your purchase",
+    "DESCRIPTION": "You are about to purchase {{planName}} package for {{price}}. Please confirm to proceed with the purchase.",
+    "BUTTON_CONFIRM": "Confirm",
+    "BUTTON_PROCESSING": "Processing...",
+    "BUTTON_BACK": "Back",
+    "SUCCESS": "Purchase completed successfully",
+    "ERROR": {
+      "INVALID_DATA": "Invalid purchase data. Please try again.",
+      "PAYMENT_FAILED": "Payment processing failed. Please check your payment method and try again.",
+      "PURCHASE_FAILED": "Purchase failed. Please try again.",
+      "SELECTION_MISSING": "Please select a plan and duration to proceed."
+    }
+  },
+  "CONNECTED": {
+    "TITLE": "You are connected!",
+    "YOUR_PLAN": "Your Plan: {{planName}}",
+    "DEVICES": "Devices:",
+    "DEVICE": "device",
+    "DEVICES_PLURAL": "devices",
+    "EXPIRES": "Expires:",
+    "BUTTON_BROWSE": "Start browsing",
+    "UPGRADE_TITLE": "Upgrade options"
+  },
+  "VOUCHER": {
+    "TITLE": "Redeem a voucher",
+    "CODE_LABEL": "Voucher Code",
+    "CODE_PLACEHOLDER": "Enter code",
+    "BUTTON_REDEEM": "Redeem",
+    "SUCCESS": "Voucher code accepted!",
+    "ERROR": {
+      "EMPTY": "Please enter a voucher code.",
+      "INVALID": "Invalid voucher code. Please try again.",
+      "VOUCHER_EMPTY": "Please enter a voucher code.",
+      "VOUCHER_INVALID": "Invalid voucher code. Please try again."
+    }
+  },
   "FOOTER": {
     "TERMS": "Terms and Condition",
     "FAQ": "FAQ",
