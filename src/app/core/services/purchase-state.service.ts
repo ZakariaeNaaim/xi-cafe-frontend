@@ -1,4 +1,5 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Plan, Duration, PurchaseState } from '../models';
 
 @Injectable({
@@ -6,6 +7,7 @@ import { Plan, Duration, PurchaseState } from '../models';
 })
 export class PurchaseStateService {
   private readonly STORAGE_KEY = 'purchase_state';
+  private platformId = inject(PLATFORM_ID);
 
   private state = signal<PurchaseState>(this._loadState());
 
@@ -24,17 +26,24 @@ export class PurchaseStateService {
   clearSelection() {
     const emptyState = { plan: null, duration: null, devices: 1 };
     this.state.set(emptyState);
-    sessionStorage.removeItem(this.STORAGE_KEY);
+    if (isPlatformBrowser(this.platformId)) {
+      sessionStorage.removeItem(this.STORAGE_KEY);
+    }
   }
 
   private _loadState(): PurchaseState {
-    const stored = sessionStorage.getItem(this.STORAGE_KEY);
-    return stored
-      ? (JSON.parse(stored) as PurchaseState)
-      : { plan: null, duration: null, devices: 1 };
+    if (isPlatformBrowser(this.platformId)) {
+      const stored = sessionStorage.getItem(this.STORAGE_KEY);
+      return stored
+        ? (JSON.parse(stored) as PurchaseState)
+        : { plan: null, duration: null, devices: 1 };
+    }
+    return { plan: null, duration: null, devices: 1 };
   }
 
   private _saveState(state: PurchaseState) {
-    sessionStorage.setItem(this.STORAGE_KEY, JSON.stringify(state));
+    if (isPlatformBrowser(this.platformId)) {
+      sessionStorage.setItem(this.STORAGE_KEY, JSON.stringify(state));
+    }
   }
 }
