@@ -51,6 +51,16 @@
       "SELECTION_MISSING": "Please select a plan and duration to proceed."
     }
   },
+  "CONNECTED": {
+    "TITLE": "You are connected!",
+    "YOUR_PLAN": "Your Plan: {{planName}}",
+    "DEVICES": "Devices:",
+    "DEVICE": "device",
+    "DEVICES_PLURAL": "devices",
+    "EXPIRES": "Expires:",
+    "BUTTON_BROWSE": "Start browsing",
+    "UPGRADE_TITLE": "Upgrade options"
+  },
   "FOOTER": {
     "TERMS": "Terms and Condition",
     "FAQ": "FAQ",
