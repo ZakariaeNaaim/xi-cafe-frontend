@@ -12,7 +12,7 @@ export class DataService {
     return of(null)
       .pipe(delay(TIMING.ANIMATION_FAST_MS))
       .pipe(() => {
-        return of(db.plans);
+        return of(db.plans as Plan[]);
       });
   }
 
@@ -20,7 +20,7 @@ export class DataService {
     return of(null)
       .pipe(delay(TIMING.ANIMATION_FAST_MS))
       .pipe(() => {
-        return of(db.durations);
+        return of(db.durations as Duration[]);
       });
   }
 
@@ -44,7 +44,7 @@ export class DataService {
     return of(null)
       .pipe(delay(TIMING.ANIMATION_FAST_MS))
       .pipe(() => {
-        return of(db.vouchers);
+        return of(db.vouchers as Voucher[]);
       });
   }
 }

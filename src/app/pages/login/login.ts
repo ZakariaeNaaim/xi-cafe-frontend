@@ -8,10 +8,18 @@ import { AuthService } from '../../core/services/auth.service';
 import { VALIDATION } from '../../core/constants/validation.constants';
 import { dayValidator } from '../../core/validators/date.validators';
 import { finalize } from 'rxjs';
+import { XiwlInputComponent } from '../../shared/components/xiwl-input/xiwl-input.component';
+import { XiwlButtonComponent } from '../../shared/components/xiwl-button/xiwl-button.component';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, CommonModule, TranslateModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    TranslateModule,
+    XiwlInputComponent,
+    XiwlButtonComponent,
+  ],
   templateUrl: './login.html',
   styleUrl: './login.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -27,7 +35,7 @@ export class LoginComponent {
     firstName: ['', Validators.required],
     surname: ['', Validators.required],
     roomNumber: [
-      1,
+      VALIDATION.ROOM_MIN,
       [
         Validators.required,
         Validators.min(VALIDATION.ROOM_MIN),
@@ -47,6 +55,7 @@ export class LoginComponent {
 
   onSubmit() {
     this.submitted.set(true);
+    this.loginForm.markAllAsTouched();
     this.loginError.set('');
 
     if (this.loginForm.invalid) return;

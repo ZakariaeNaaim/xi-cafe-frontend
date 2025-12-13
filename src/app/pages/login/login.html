@@ -9,50 +9,45 @@
   <div class="login-tile">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <!-- First Name -->
-      <div class="form-group">
-        <label for="firstName">{{ 'LOGIN.FIRST_NAME' | translate }}</label>
-        <input
-          id="firstName"
-          type="text"
-          formControlName="firstName"
-          [placeholder]="'LOGIN.FIRST_NAME' | translate"
-        />
+      <xiwl-input
+        [control]="f.firstName"
+        [label]="'LOGIN.FIRST_NAME' | translate"
+        [placeholder]="'LOGIN.FIRST_NAME' | translate"
+        inputId="firstName"
+      >
         @if (submitted() && f.firstName.errors?.['required']) {
-        <div class="error-text">{{ 'LOGIN.ERROR.REQUIRED_FIRST_NAME' | translate }}</div>
+        <div class="error-text" error>{{ 'LOGIN.ERROR.REQUIRED_FIRST_NAME' | translate }}</div>
         }
-      </div>
+      </xiwl-input>
 
       <!-- Surname -->
-      <div class="form-group">
-        <label for="surname">{{ 'LOGIN.SURNAME' | translate }}</label>
-        <input
-          id="surname"
-          type="text"
-          formControlName="surname"
-          [placeholder]="'LOGIN.SURNAME' | translate"
-        />
+      <xiwl-input
+        [control]="f.surname"
+        [label]="'LOGIN.SURNAME' | translate"
+        [placeholder]="'LOGIN.SURNAME' | translate"
+        inputId="surname"
+      >
         @if (submitted() && f.surname.errors?.['required']) {
-        <div class="error-text">{{ 'LOGIN.ERROR.REQUIRED_SURNAME' | translate }}</div>
+        <div class="error-text" error>{{ 'LOGIN.ERROR.REQUIRED_SURNAME' | translate }}</div>
         }
-      </div>
+      </xiwl-input>
 
       <!-- Room Number -->
-      <div class="form-group">
-        <label for="roomNumber">{{ 'LOGIN.ROOM_NUMBER' | translate }}</label>
-        <input
-          id="roomNumber"
-          type="number"
-          formControlName="roomNumber"
-          [placeholder]="'LOGIN.ROOM_NUMBER' | translate"
-        />
+      <xiwl-input
+        [control]="f.roomNumber"
+        [label]="'LOGIN.ROOM_NUMBER' | translate"
+        [placeholder]="'LOGIN.ROOM_NUMBER' | translate"
+        type="number"
+        inputId="roomNumber"
+      >
         @if (submitted() && f.roomNumber.errors?.['required']) {
-        <div class="error-text">{{ 'LOGIN.ERROR.REQUIRED_ROOM' | translate }}</div>
+        <div class="error-text" error>{{ 'LOGIN.ERROR.REQUIRED_ROOM' | translate }}</div>
         } @else if (submitted() && f.roomNumber.errors?.['pattern']) {
-        <div class="error-text">{{ 'LOGIN.ERROR.INVALID_ROOM_FORMAT' | translate }}</div>
+        <div class="error-text" error>{{ 'LOGIN.ERROR.INVALID_ROOM_FORMAT' | translate }}</div>
         } @else if (submitted() && f.roomNumber.errors?.['min']) {
-        <div class="error-text">{{ 'LOGIN.ERROR.INVALID_ROOM_MIN' | translate }}</div>
+        <div class="error-text" error>{{ 'LOGIN.ERROR.INVALID_ROOM_MIN' | translate }}</div>
         }
-      </div>
+      </xiwl-input>
 
       <!-- Date of Birth -->
       <div class="form-group dob-group">
@@ -86,9 +81,9 @@
         }
       </div>
 
-      <button type="submit" class="primary-btn login-btn" [disabled]="isLoading()">
+      <xiwl-button type="submit" customClass="login-btn" [disabled]="isLoading()">
         {{ 'LOGIN.BUTTON' | translate }}
-      </button>
+      </xiwl-button>
     </form>
   </div>
 </div>

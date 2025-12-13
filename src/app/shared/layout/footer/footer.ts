@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { APP_CONSTANTS } from '../../core/constants/app-data.constants';
+import { APP_CONSTANTS } from '../../../core/constants/app-data.constants';
 
 @Component({
   selector: 'app-footer',

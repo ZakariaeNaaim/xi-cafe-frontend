@@ -1,0 +1,27 @@
+.form-group {
+  margin-bottom: 1rem;
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--input-border);
+  border-radius: var(--border-radius);
+  transition: border-color 0.2s;
+}
+input:focus {
+  outline: none;
+  border-color: var(--link-hover);
+}
+input.error {
+  border-color: var(--error-color);
+}
+.error-text {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}

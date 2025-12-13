@@ -60,7 +60,7 @@ export default tseslint.config(
         'error',
         {
           type: 'element',
-          prefix: 'app',
+          prefix: ['app', 'xiwl'],
           style: 'kebab-case',
         },
       ],
