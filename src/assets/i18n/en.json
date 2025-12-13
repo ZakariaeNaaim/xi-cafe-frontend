@@ -57,7 +57,8 @@
       "INVALID_DATA": "Invalid purchase data. Please try again.",
       "PAYMENT_FAILED": "Payment processing failed. Please check your payment method and try again.",
       "PURCHASE_FAILED": "Purchase failed. Please try again.",
-      "SELECTION_MISSING": "Please select a plan and duration to proceed."
+      "SELECTION_MISSING": "Please select a plan and duration to proceed.",
+      "NO_SELECTION_FOUND": "No selection found"
     }
   },
   "CONNECTED": {
@@ -68,7 +69,10 @@
     "DEVICES_PLURAL": "devices",
     "EXPIRES": "Expires:",
     "BUTTON_BROWSE": "Start browsing",
-    "UPGRADE_TITLE": "Upgrade options"
+    "UPGRADE_TITLE": "Upgrade options",
+    "EXPIRATION": {
+      "VOYAGE": "Whole Cruise"
+    }
   },
   "VOUCHER": {
     "TITLE": "Redeem a voucher",

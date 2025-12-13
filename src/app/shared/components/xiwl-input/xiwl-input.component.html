@@ -1,0 +1,15 @@
+<div class="form-group">
+  <label [for]="inputId()">{{ label() }}</label>
+  <input
+    [id]="inputId()"
+    [type]="type()"
+    [formControl]="control()"
+    [placeholder]="placeholder()"
+    [class.error]="isInvalid"
+  />
+  @if (isInvalid) {
+  <div class="error-text">
+    <ng-content select="[error]"></ng-content>
+  </div>
+  }
+</div>

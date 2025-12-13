@@ -14,27 +14,34 @@
   ],
   "plans": [
     {
-      "id": "social",
+      "id": 1,
       "name": "Social",
       "description": "Access to social media apps only.",
       "basePrice": 5.0
     },
     {
-      "id": "basic",
+      "id": 2,
       "name": "Basic",
       "description": "Web browsing and emails.",
       "basePrice": 10.0
     },
     {
-      "id": "premium",
+      "id": 3,
       "name": "Premium",
       "description": "Streaming and high-speed access.",
       "basePrice": 15.0
     }
   ],
   "durations": [
-    { "id": "24h", "name": "24 Hours", "multiplier": 1 },
-    { "id": "cruise", "name": "Whole Cruise", "multiplier": 5 }
+    { "id": 1, "name": "24 Hours", "type": "fixed", "value": 24, "unit": "hours", "multiplier": 1 },
+    {
+      "id": 2,
+      "name": "Whole Cruise",
+      "type": "voyage",
+      "value": null,
+      "unit": null,
+      "multiplier": 5
+    }
   ],
   "deviceOptions": [1, 2, 3, 4],
   "upgrades": [{ "name": "Premium Upgrade", "description": "Get faster speeds for streaming." }],
@@ -42,17 +49,17 @@
     {
       "id": 1,
       "code": "VALID123",
-      "planId": "basic",
+      "planId": 2,
       "planName": "Basic",
-      "duration": "24 Hours",
+      "durationId": 1,
       "active": true
     },
     {
       "id": 2,
       "code": "FREEWIFI",
-      "planId": "premium",
+      "planId": 3,
       "planName": "Premium",
-      "duration": "Whole Cruise",
+      "durationId": 2,
       "active": true
     }
   ]

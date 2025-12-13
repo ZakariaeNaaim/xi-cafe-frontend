@@ -2,23 +2,26 @@
   <div class="voucher-card">
     <h1 class="page-title">{{ 'VOUCHER.TITLE' | translate }}</h1>
 
-    <div class="form-group">
-      <label for="voucherCode">{{ 'VOUCHER.CODE_LABEL' | translate }}</label>
-      <input
-        id="voucherCode"
-        type="text"
-        [ngModel]="voucherCode()"
-        (ngModelChange)="voucherCode.set($event)"
-        [placeholder]="'VOUCHER.CODE_PLACEHOLDER' | translate"
-      />
-    </div>
+    <form (ngSubmit)="redeem()">
+      <div class="form-group">
+        <label for="voucherCode">{{ 'VOUCHER.CODE_LABEL' | translate }}</label>
+        <input
+          id="voucherCode"
+          name="voucherCode"
+          type="text"
+          [ngModel]="voucherCode()"
+          (ngModelChange)="voucherCode.set($event)"
+          [placeholder]="'VOUCHER.CODE_PLACEHOLDER' | translate"
+        />
+      </div>
 
-    @if (errorMsg()) {
-    <div class="error-msg">{{ errorMsg() }}</div>
-    }
+      @if (errorMsg()) {
+      <div class="error-msg">{{ errorMsg() }}</div>
+      }
 
-    <button class="primary-btn redeem-btn" (click)="redeem()" [disabled]="isProcessing()">
-      {{ 'VOUCHER.BUTTON_REDEEM' | translate }}
-    </button>
+      <button class="primary-btn redeem-btn" type="submit" [disabled]="isProcessing()">
+        {{ 'VOUCHER.BUTTON_REDEEM' | translate }}
+      </button>
+    </form>
   </div>
 </div>

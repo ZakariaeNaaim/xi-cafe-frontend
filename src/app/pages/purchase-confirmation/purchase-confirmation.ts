@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject, signal, computed } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { APP_CONSTANTS } from '../../core/constants/app-data.constants';
 import { PurchaseService } from '../../core/services/purchase.service';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { PurchaseStateService } from '../../core/services/purchase-state.service';
 
 @Component({
   selector: 'app-purchase-confirmation',
@@ -14,25 +14,19 @@ import { toSignal } from '@angular/core/rxjs-interop';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
 })
-export class PurchaseConfirmationComponent {
-  private route = inject(ActivatedRoute);
+export class PurchaseConfirmationComponent implements OnInit {
   private router = inject(Router);
   private purchaseService = inject(PurchaseService);
+  private purchaseState = inject(PurchaseStateService);
   private translate = inject(TranslateService);
 
   readonly constants = APP_CONSTANTS;
 
-  private readonly queryParams = toSignal<Params>(this.route.queryParams);
+  details = this.purchaseState.selection;
 
-  details = computed(() => {
-    const params = this.queryParams() ?? {};
-    return {
-      planName: params['plan'] ?? 'Unknown Plan',
-      duration: params['duration'] ?? '',
-      devices: Number.parseInt(params['devices'] ?? '1', 10) || 1,
-      price: Number.parseFloat(params['price'] ?? '0') || 0,
-    };
-  });
+  ngOnInit(): void {
+    this._checkState();
+  }
 
   errorMsg = signal('');
   isProcessing = signal(false);
@@ -41,14 +35,24 @@ export class PurchaseConfirmationComponent {
     this.errorMsg.set('');
     this.isProcessing.set(true);
 
-    const { planName, duration, devices, price } = this.details();
+    const { plan, duration, devices } = this.details();
 
-    this.purchaseService.processPurchase({ planName, duration, devices, price }).subscribe({
+    if (!plan || !duration) {
+      this.errorMsg.set(this.translate.instant('PURCHASE.ERROR.NO_SELECTION_FOUND'));
+      return;
+    }
+
+    const payload = {
+      planName: plan.name,
+      duration: duration.name,
+      devices,
+      price: this.purchaseState.totalPrice(),
+    };
+
+    this.purchaseService.processPurchase(payload).subscribe({
       next: () => {
         this.isProcessing.set(false);
-        this.router.navigate([APP_CONSTANTS.ROUTES.CONNECTED], {
-          queryParams: { plan: planName, devices },
-        });
+        this.router.navigate([APP_CONSTANTS.ROUTES.CONNECTED]);
       },
       error: (error) => {
         this.isProcessing.set(false);
@@ -61,5 +65,12 @@ export class PurchaseConfirmationComponent {
 
   goBack() {
     this.router.navigate([APP_CONSTANTS.ROUTES.PLANS]);
+  }
+
+  private _checkState() {
+    const state = this.details();
+    if (!state.plan || !state.duration) {
+      this.router.navigate([APP_CONSTANTS.ROUTES.PLANS]);
+    }
   }
 }

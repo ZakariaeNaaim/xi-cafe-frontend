@@ -97,9 +97,9 @@
           <span class="value">{{ totalPrice() | currency : 'EUR' }}</span>
         </div>
 
-        <button class="primary-btn purchase-btn" (click)="onPurchase()">
+        <xiwl-button customClass="purchase-btn" (clicked)="onPurchase()">
           {{ 'PLANS.BUTTON_PURCHASE' | translate }}
-        </button>
+        </xiwl-button>
       </div>
     </div>
   </div>

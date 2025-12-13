@@ -1,14 +1,17 @@
+import { Plan, Duration } from './plan.model';
+
 export interface Voucher {
-  id?: number;
+  id: number;
   code: string;
-  planId: string;
+  planId: number;
   planName: string;
-  duration: string;
+  durationId: number;
   active: boolean;
 }
 
 export interface VoucherValidationResponse {
   success: boolean;
   message?: string;
-  planName?: string;
+  plan?: Plan;
+  duration?: Duration;
 }
