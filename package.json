@@ -1,6 +1,6 @@
 {
   "name": "xi-cafe-portal",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -43,11 +43,11 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@angular-eslint/builder": "^21.1.0",
-    "@angular-eslint/eslint-plugin": "^21.1.0",
-    "@angular-eslint/eslint-plugin-template": "^21.1.0",
-    "@angular-eslint/schematics": "^21.1.0",
-    "@angular-eslint/template-parser": "^21.1.0",
+    "@angular-eslint/builder": "^20.0.0",
+    "@angular-eslint/eslint-plugin": "^20.0.0",
+    "@angular-eslint/eslint-plugin-template": "^20.0.0",
+    "@angular-eslint/schematics": "^20.0.0",
+    "@angular-eslint/template-parser": "^20.0.0",
     "@angular/build": "^20.0.0",
     "@angular/cli": "^20.0.0",
     "@angular/compiler-cli": "^20.0.0",
@@ -58,6 +58,6 @@
     "json-server": "^1.0.0-beta.3",
     "typescript": "~5.8.0",
     "typescript-eslint": "^8.49.0",
-    "vitest": "^4.0.8"
+    "vitest": "^3.2.4"
   }
 }
