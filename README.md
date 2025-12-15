@@ -2,41 +2,41 @@
 
 > **Enterprise-grade Angular application** built with modern best practices, demonstrating professional frontend development skills.
 
-## 🎯 Project Overview
+## Project Overview
 
 A responsive web portal enabling cruise ship guests and crew to purchase and manage Internet packages. Built with **Angular 20**, featuring all 5 requested pages and a robust, scalable architecture.
 
 ---
 
-## ✨ Key Features & Best Practices Implemented
+## Key Features & Best Practices Implemented
 
-### 🏗️ **Architecture & Code Quality**
+### **Architecture & Code Quality**
 
-- ✅ **Angular 20+ Standalone Components** - Modern component architecture without NgModules
-- ✅ **Angular Signals (Inputs/Outputs)** - Full usage of modern `input()`, `output()`, and `model()` signals
-- ✅ **Reactive State Management** - **PurchaseStateService** handles complex transaction flows using Signals and `sessionStorage` persistence (resilient to page refreshes)
-- ✅ **TypeScript Strict Mode** - 100% type-safe code, zero `any` types
-- ✅ **Change Detection Strategy** - `OnPush` used everywhere for optimal performance
+- **Angular 20+ Standalone Components** - Modern component architecture without NgModules
+- **Angular Signals (Inputs/Outputs)** - Full usage of modern `input()`, `output()`, and `model()` signals
+- **Reactive State Management** - **PurchaseStateService** handles complex transaction flows using Signals and `sessionStorage` persistence (resilient to page refreshes)
+- **TypeScript Strict Mode** - 100% type-safe code, zero `any` types
+- **Change Detection Strategy** - `OnPush` used everywhere for optimal performance
 
-### 🎨 **Design & Styling**
+### **Design & Styling**
 
-- ✅ **SCSS with BEM Methodology** - Scalable CSS architecture with `XIWL-` prefix
-- ✅ **CSS Variables** - Centralized design tokens for easy theming
-- ✅ **SCSS Mixins & Functions** - Reusable styling utilities
-- ✅ **Responsive Design** - works on all devices
-- ✅ **Accessibility** - Semantic HTML, ARIA labels, keyboard navigation
-- ✅ **Mobile-First Design** - Optimized UI (logo sizing, spacing) for mobile devices
-- ✅ **Accessibility** - Semantic HTML, keyboard navigation support (Enter to submit)
+- **SCSS with BEM Methodology** - Scalable CSS architecture with `XIWL-` prefix
+- **CSS Variables** - Centralized design tokens for easy theming
+- **SCSS Mixins & Functions** - Reusable styling utilities
+- **Responsive Design** - works on all devices
+- **Accessibility** - Semantic HTML, ARIA labels, keyboard navigation
+- **Mobile-First Design** - Optimized UI (logo sizing, spacing) for mobile devices
+- **Accessibility** - Semantic HTML, keyboard navigation support (Enter to submit)
 
-### 🔧 **Development Practices**
+### **Development Practices**
 
-- ✅ **Barrel Exports** - Clean imports with index files
-- ✅ **Services with Dependency Injection** - Singleton services for shared logic
-- ✅ **Models & Interfaces** - Strongly typed data structures
-- ✅ **Error Handling** - Comprehensive error handling and user feedback
-- ✅ **Form Validation** - Client-side validation with custom validators
-- ✅ **Clean Code** - SOLID principles, DRY, Separation of Concerns
-- ✅ **ESLint Integration** - Comprehensive linting for TypeScript and HTML templates
+- **Barrel Exports** - Clean imports with index files
+- **Services with Dependency Injection** - Singleton services for shared logic
+- **Models & Interfaces** - Strongly typed data structures
+- **Error Handling** - Comprehensive error handling and user feedback
+- **Form Validation** - Client-side validation with custom validators
+- **Clean Code** - SOLID principles, DRY, Separation of Concerns
+- **ESLint Integration** - Comprehensive linting for TypeScript and HTML templates
   - Angular-specific rules for components, directives, and templates
   - TypeScript strict rules with no `any` types allowed
   - Accessibility checks for HTML templates
@@ -44,7 +44,7 @@ A responsive web portal enabling cruise ship guests and crew to purchase and man
 
 ---
 
-## 📅 Project Management & Workflow
+## Project Management & Workflow
 
 To simulate a professional enterprise environment, I followed a strict development workflow:
 
@@ -53,7 +53,7 @@ To simulate a professional enterprise environment, I followed a strict developme
 3.  **Pull Request Workflow:** For every completed task, I created a Pull Request (PR) to merge changes, ensuring code review readiness.
 4.  **Priority Adherence:** I strictly favored high-priority tasks over optional ones.
 
-### 📋 Prioritized Feature Implementation
+### Prioritized Feature Implementation
 
 I respected the priorities and implemented the features in the following order (Highest Priority first):
 
@@ -62,24 +62,37 @@ I respected the priorities and implemented the features in the following order (
 3.  **Connected (XIWL-04)** - 🔴 **High Priority**
 4.  **Purchase Confirmation (XIWL-03)** - 🟡 **Medium (Optional)**
 5.  **Redeem Voucher (XIWL-05)** - 🟢 **Low (Optional)**
-    -- added by me :
-6.  **Readme (XIWL-06)** \*\*
-7.  **Enhancements (XIWL-07)** \*\*
+
+    _Additional Enhancements:_
+
+6.  **Readme (XIWL-06)**
+7.  **Enhancements (XIWL-07)**
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-- **Node.js** 18+ and **npm** 9+
-- **Angular CLI** 20+
+Ensure you are using the correct Node.js version to avoid compatibility issues.
+
+```bash
+node -v
+npm -v
+
+nvm install 20
+nvm use 20
+```
+
+- **Node.js**: >= 20.0.0
+- **npm**: >= 10.0.0
+- **Angular CLI**: 20+
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone <https://github.com/ZakariaeNaaim/xi-cafe-frontend>
+git clone https://github.com/ZakariaeNaaim/xi-cafe-frontend
 
 # Install dependencies
 npm install
@@ -88,24 +101,18 @@ npm install
 ### Running the Application
 
 ```bash
-# Development server (with hot reload)
 npm start
-
-# Application will be available at http://localhost:4200
 ```
 
 ### Building for Production
 
 ```bash
-# Production build
 npm run build
-
-# Output will be in dist/ folder
 ```
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Test Credentials
 
@@ -125,37 +132,6 @@ Use these credentials to log in:
 
 ---
 
-## 📁 Project Structure
-
-```
-src/
-├── app/
-│   ├── core/                      # Singleton services, guards, models
-│   │   ├── constants/             # Application constants
-│   │   ├── models/                # TypeScript interfaces & types
-│   │   └── services/              # Business logic services
-│   ├── pages/                     # Feature pages
-│   │   ├── connected/             # XIWL-04
-│   │   ├── login/                 # XIWL-01
-│   │   ├── plan-selection/        # XIWL-02
-│   │   ├── purchase-confirmation/ # XIWL-03
-│   │   └── redeem-voucher/        # XIWL-05
-│   ├── shared/                    # Shared components
-│   │   ├── components/            # Generic UI (xiwl-button, xiwl-input)
-│   │   └── layout/                # Layout components (header, footer)
-│   ├── app.config.ts              # App configuration (i18n, providers)
-│   └── app.routes.ts              # Route definitions
-├── assets/
-│   └── i18n/                      # Translation files
-│       └── en.json                # English translations
-└── styles/
-    ├── _variables.scss            # SCSS variables
-    ├── _mixins.scss               # SCSS mixins
-    └── styles.scss                # Global styles
-```
-
----
-
 ## 🌟 Highlights & Best Practices
 
 ### 1. **Modern Angular Features**
@@ -167,7 +143,6 @@ src/
 ### 2. **Robust State Management**
 
 - **PurchaseStateService:** A centralized store for purchase flow data.
-
 - **Persistence:** data survives page refreshes via session storage management.
 
 ### 3. **Internationalization (i18n)**
@@ -203,7 +178,7 @@ src/
 
 ---
 
-## 🔧 Technologies Used
+## Technologies Used
 
 - **Angular 20** - Frontend framework
 - **TypeScript 5** - Type-safe JavaScript
@@ -215,7 +190,7 @@ src/
 
 ---
 
-## 📦 NPM Scripts
+## NPM Scripts
 
 ```bash
 npm start          # Start development server
@@ -225,34 +200,36 @@ npm run lint       # Run ESLint on TypeScript and HTML files
 
 ---
 
-## 🔍 Code Quality with ESLint
+## Code Quality with ESLint
 
 ### ESLint Rules Overview
 
 #### Angular Rules
 
-- ✅ Component/Directive selector validation (prefix: `app`)
-- ✅ Lifecycle interfaces enforcement
-- ✅ Injectable provided-in validation
-- ✅ Input/Output naming conventions
-- ⚠️ OnPush change detection preference (warning)
-- ⚠️ Empty lifecycle methods (warning)
+- Component/Directive selector validation (prefix: `app` or `xiwl`)
+- Lifecycle interfaces enforcement
+- Injectable provided-in validation
+- Input/Output naming conventions
+- OnPush change detection preference (warning)
+- Empty lifecycle methods (warning)
 
 #### TypeScript Rules
 
-- ❌ **No `any` types allowed** - Ensures type safety
-- ❌ **No unsed variables allowed** - Ensures type safety
-- ✅ Explicit member accessibility required
-- ✅ Naming conventions enforced (camelCase, PascalCase, UPPER_CASE)
-- ⚠️ Max line length: 120 characters (warning)
-- ✅ Prefer `const` over `let` when possible
+- **No `any` types allowed** - Ensures type safety
+- **No unused variables allowed** - Ensures type safety
+- **Explicit member accessibility required**
+- **Naming conventions enforced (camelCase, PascalCase, UPPER_CASE)**
+- Max line length: 120 characters (warning)
+- **Prefer `const` over `let` when possible**
 
 #### Template Rules
 
-- ✅ Async pipe best practices
-- ⚠️ Prefer new control flow syntax (`@if`, `@for`)
+- Async pipe best practices
+- Prefer new control flow syntax (`@if`, `@for`)
 
-## 🎓 Development Notes
+---
+
+## Development Notes
 
 ### Network Delay Simulation
 
@@ -260,7 +237,7 @@ npm run lint       # Run ESLint on TypeScript and HTML files
 
 ---
 
-## 🏆 Why This Implementation Stands Out
+## Why This Implementation Stands Out
 
 1. **Production-Ready Code:** Not just a prototype - ready for real-world deployment
 2. **Best Practices:** Follows all Angular and TypeScript best practices
@@ -273,18 +250,12 @@ npm run lint       # Run ESLint on TypeScript and HTML files
 
 ---
 
-## 📝 Future Enhancements
+## Future Enhancements
 
 - Unit tests (Jasmine/Karma)
 - Backend API integration
 - Real payment gateway integration
 - User authentication with JWT
-- global error handling
+- Global error handling
 
 ---
-
-## 👨‍💻 Author
-
-Zakariae Naaim
-
-Built with attention to detail and adherence to best practices to showcase professional Angular development skills.
